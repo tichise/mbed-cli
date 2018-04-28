@@ -1,38 +1,38 @@
-## Introduction
+## まえがき
 
-Arm Mbed CLI is the name of the Arm Mbed command-line tool, packaged as `mbed-cli`. Mbed CLI enables Git- and Mercurial-based version control, dependencies management, code publishing, support for remotely hosted repositories (GitHub, GitLab and mbed.org), use of the Arm Mbed OS build system and export functions and other operations.
+Arm Mbed CLIは、Arm Mbedコマンドラインツールの名前で、mbed-cliとしてパッケージ化されています。 Mbed CLIを使用すると、GitおよびMercurialベースのバージョン管理、依存関係管理、コード公開、リモートホストリポジトリ（GitHub、GitLab and mbed.org）のサポート、Arm Mbed OSビルドシステムの使用、エクスポート機能などの操作が可能になります。
 
-This document covers the installation and usage of Mbed CLI.
+このドキュメントでは、Mbed CLIのインストールと使用について説明します。
 
-## Table of Contents
+## 目次
 
-1. [Using Mbed CLI](#using-mbed-cli)
-1. [Installing and uninstalling](#installing-mbed-cli)
-1. [Understanding working context and program root](#before-you-begin-understanding-the-working-context-and-program-root)
-1. [Creating and importing programs](#creating-and-importing-programs)
-    1. [Creating a new program](#creating-a-new-program-for-mbed-os-5)
-    2. [Importing an existing program](#importing-an-existing-program)
-1. [Adding and removing libraries](#adding-and-removing-libraries)
-1. [Compiling code](#compiling-code)
-    1. [Toolchain selection](#toolchain-selection)
-    2. [Compiling your program](#compiling-your-program)
-    3. [Compiling static libraries](#compiling-static-libraries)
-    4. [Compile configuration system](#compile-configuration-system)
-    5. [Compile-time customizations](#compile-time-customizations)
-1. [Exporting to desktop IDEs](#exporting-to-desktop-ides)
-1. [Testing](#testing)
-    1. [Finding available tests](#finding-available-tests)
-    2. [Compiling and running tests](#compiling-and-running-tests)
-    3. [Limiting the test scope](#limiting-the-test-scope)
-    4. [Test directory structure](#test-directory-structure)
-1. [Publishing your changes](#publishing-your-changes)
-    1. [Checking status](#checking-status)
-    2. [Pushing upstream](#pushing-upstream)
-1. [Updating programs and libraries](#updating-programs-and-libraries)
-    1. [Updating to an upstream version](#updating-to-an-upstream-version)
-    2. [Update examples](#update-examples)
-1. [Mbed CLI configuration](#mbed-cli-configuration)
-1. [Troubleshooting](#troubleshooting)
+1. [Mbed CLIを使用する]（＃using-mbed-cli）
+1. [インストールとアンインストール]（＃installing-mbed-cli）
+1. [作業コンテキストとプログラムルートを理解する]（理解する前に作業を開始するコンテキストとプログラムのルート）
+1. [プログラムの作成とインポート]（＃作成およびインポートプログラム）
+    1. [新しいプログラムを作成する]（＃mbed-os-5のための新しいプログラムを作成する）
+    2. [既存プログラムのインポート]（既存のプログラムのインポート）
+1. [ライブラリの追加と削除]（＃追加と削除のライブラリ）
+1. [コンパイルコード]（＃コンパイルコード）
+    1. [ツールチェーンの選択]（＃toolchain-selection）
+    2. [あなたのプログラムのコンパイル]（あなたのプログラムのコンパイル）
+    3. [静的ライブラリのコンパイル]（＃compiling-static-libraries）
+    4. [コンパイル設定システム]（＃compile-configuration-system）
+    5. [コンパイル時のカスタマイズ]（＃コンパイル時のカスタマイズ）
+1. [デスクトップIDEへのエクスポート]（＃exporting-desktop-ides）
+1. [テスト]（＃テスト）
+    1. [利用可能なテストの検索]（＃見つかった利用可能なテスト）
+    2. [テストのコンパイルと実行]（＃コンパイルと実行テスト）
+    3. [テスト範囲の制限]（＃テスト範囲の制限）
+    4. [テストディレクトリ構造]（＃test-directory-structure）
+1. [あなたの変更を公開する]（＃公開中の変更）
+    1. [確認状態]（＃確認状態）
+    2. [上流に押し込む]（＃押し上げる上流）
+1. [プログラムとライブラリの更新]（＃update-programs-and-libraries）
+    1. [上流バージョンへの更新]（＃updating-to-an-upstream-version）
+    2. [更新例]（＃update-examples）
+1. [Mbed CLIの設定]（＃mbed-cli-configuration）
+1. [トラブルシューティング]（＃trableshooting）
 
 
 ## Using Mbed CLI
